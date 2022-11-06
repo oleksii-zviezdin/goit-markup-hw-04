@@ -8,10 +8,22 @@
 	--background-color-button-accent: #188ce8;
 	--background-color-team-caption: #ffffff;
 	--background-color-card-content: #ffffff;
+	--background-color-socials-icons: rgba(33, 150, 243, 1);
+	--background-color-socials-icons-footer: rgba(255, 255, 255, 0.1);
+	--background-color-icons-strengths: rgba(245, 244, 250, 1);
 
 	/* text color */
 	--accent-text-color: #2196f3;
 	--color-text-white: #ffffff;
+
+	/* icons color */
+	--social-icons-color: rgba(175, 177, 184, 1);
+	--social-icons-active-color: rgba(255, 255, 255, 1);
+
+	--social-icons-footer-color: rgba(255, 255, 255, 1);
+
+	--costumer-color: rgba(175, 177, 184, 1);
+	--costumer-accent-color: rgba(33, 150, 243, 1);
 
 	/* hero <h1> */
 	--h1-headline-text-color: #ffffff;
@@ -50,7 +62,6 @@
 
 	/* border */
 	--card-border-color: #eeeeee;
-	--costumer-border-color: rgba(175, 177, 184, 1);
 }
 
 /* General setting */
@@ -195,8 +206,17 @@ img {
 	color: var(--accent-text-color);
 }
 
+.email,
+.smartphone {
+	fill: currentColor;
+}
+
 /* contact header */
 .contact-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
 	color: var(--primary-text-color);
 }
 
@@ -204,6 +224,7 @@ img {
 	display: flex;
 	gap: 50px;
 	margin-left: auto;
+	align-items: center;
 }
 
 .title {
@@ -322,24 +343,23 @@ img {
 	margin-right: 30px;
 } */
 
-/*-------------- WORK SECTION --------------*/
-.min-width {
-	flex-basis: calc(
-		(100%-var(--width-gap-list) * (var(--column-pieces)-1)) /
-			var(--column-pieces)
-	);
-}
-
-/* if delete class "gap-list" from <ul> element in the WORK SECTION and add class "work-list" and add class "work-item" for <li> element we can use below code */
-
-/* .work-list {
+.icon-list {
 	display: flex;
-	flex-wrap: wrap;
+	margin-bottom: 30px;
+	gap: 30px;
 }
 
-.work-list .work-item:not(:nth-child(3)) {
-	margin-right: 30px;
-} */
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 270px;
+	height: 120px;
+
+	background-color: var(--background-color-icons-strengths);
+	border-radius: 4px;
+}
+/*-------------- WORK SECTION --------------*/
 
 /*-------------- TEAM SECTION --------------*/
 
@@ -351,7 +371,8 @@ img {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 1.19;
-	/* text-align: center; */
+	justify-content: center;
+	text-align: center;
 	letter-spacing: 0.03em;
 
 	margin-bottom: 10px;
@@ -362,8 +383,11 @@ img {
 .team-description {
 	font-size: 16px;
 	line-height: 1.19;
-	/* text-align: center; */
+	text-align: center;
+	justify-content: center;
 	letter-spacing: 0.03em;
+
+	margin-bottom: 16px;
 }
 
 .team-caption {
@@ -377,7 +401,7 @@ img {
 	border-radius: 0px 0px 4px 4px;
 }
 
-.team-list li {
+.team-list > li {
 	box-shadow: var(--card-box-shadow);
 	border-radius: 0px 0px 4px 4px;
 }
@@ -392,24 +416,83 @@ img {
 	margin-right: 30px;
 } */
 
+.socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.socials-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+
+	border-radius: 50%;
+	color: var(--social-icons-color);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+	color: var(--social-icons-active-color);
+	background-color: var(--background-color-socials-icons);
+}
+
+.socials-icon {
+	fill: currentColor;
+}
+
+/* розширений варіант зміни кольору */
+/* .socials-icon {
+	fill: var(--social-icons-color);
+}
+
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+	fill: var(--social-icons-active-color);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+	background-color: var(--background-color-socials-icons);
+} */
+
 /* COSTUMER */
 
 .costumer {
+	margin: 0;
 }
 
 .costumer-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	width: 170px;
 	height: 92px;
 
-	background-color: #c4c4c4;
-
-	border: 1px solid #afb1b8;
+	border: 1px solid var(--costumer-color);
 	border-radius: 4px;
+
+	color: var(--costumer-color);
+}
+
+.costumer-link:hover,
+.costumer-link:focus {
+	color: var(--costumer-accent-color);
+	border-color: var(--costumer-accent-color);
+}
+
+.costumer-icon {
+	fill: currentColor;
 }
 
 /*-------------------------FOOTER-------------------------*/
 
 .footer {
+	display: flex;
 	font-size: 14px;
 	line-height: 1.71;
 	letter-spacing: 0.03em;
@@ -418,6 +501,15 @@ img {
 	padding-bottom: 60px;
 
 	background-color: var(--background-color-footer-hero);
+}
+
+.footer-container {
+	display: flex;
+	gap: 70px;
+}
+
+.socials-footer {
+	color: var(--social-icons-footer-color);
 }
 
 .address {
@@ -438,6 +530,38 @@ img {
 
 .address-link {
 	display: inline-block;
+}
+
+.socials-footer {
+	display: flex;
+	color: var(--social-icons-footer-color);
+	gap: 10px;
+	margin-top: 20px;
+	padding-bottom: 40px;
+}
+
+.footer-title {
+	font-size: 14px;
+	line-height: 1.14;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+
+	padding-top: 12px;
+
+	color: var(--color-text-white);
+}
+
+.socials-footer .socials-link {
+	background-color: var(--background-color-socials-icons-footer);
+}
+
+.footer-link {
+	color: var(--color-text-white);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+	background-color: var(--background-color-socials-icons);
 }
 
 /* *** */
@@ -486,6 +610,30 @@ img {
 }
 
 /*------------------------- gallery work ------------------------*/
+.card {
+	flex-basis: calc(
+		(100% - var(--width-gap-list) * (var(--column-pieces) - 1)) /
+			var(--column-pieces)
+	);
+}
+
+.card:hover,
+.card:focus {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+		1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+/* if delete class "gap-list" from <ul> element in the WORK SECTION and add class "work-list" and add class "work-item" for <li> element we can use below code */
+
+/* .work-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.work-list .work-item:not(:nth-child(3)) {
+	margin-right: 30px;
+} */
+
 .card-content {
 	padding-top: 20px;
 	padding-bottom: 20px;
