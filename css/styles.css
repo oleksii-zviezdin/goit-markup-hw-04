@@ -37,8 +37,10 @@
 	--width-gap-list: 30px;
 
 	/* box-shadow */
-	--card-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-	--button-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+	--card-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+		0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	--button-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+		0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 
 	/* gap-pieces */
 	--gap-pieces: 2;
@@ -46,7 +48,9 @@
 	/* column-pieces */
 	--column-pieces: 3;
 
+	/* border */
 	--card-border-color: #eeeeee;
+	--costumer-border-color: rgba(175, 177, 184, 1);
 }
 
 /* General setting */
@@ -130,7 +134,7 @@ img {
 
 .link-header {
 	padding-top: 32px;
-	padding-bottom: 32px;;
+	padding-bottom: 32px;
 }
 
 /* logo */
@@ -221,6 +225,22 @@ img {
 	color: var(--h1-headline-text-color);
 	background-color: var(--background-color-footer-hero);
 
+	max-width: 1600px;
+	max-height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+
+	background-image: linear-gradient(
+			to left,
+			rgba(47, 48, 58, 0.4),
+			rgba(47, 48, 58, 0.4)
+		),
+		url(../images/index/bg-hero.jpg);
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
 	padding-top: 200px;
 	padding-bottom: 200px;
 }
@@ -250,14 +270,14 @@ img {
 	padding-left: 32px;
 	padding-right: 32px;
 
-	border: none;	
+	border: none;
 	color: var(--color-text-white);
 	background-color: var(--background-color-button);
 
 	cursor: pointer;
 
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 4px;	
+	border-radius: 4px;
 }
 
 .button:hover,
@@ -304,7 +324,10 @@ img {
 
 /*-------------- WORK SECTION --------------*/
 .min-width {
-	flex-basis: calc((100%-var(--width-gap-list)*(var(--column-pieces)-1))/var(--column-pieces));
+	flex-basis: calc(
+		(100%-var(--width-gap-list) * (var(--column-pieces)-1)) /
+			var(--column-pieces)
+	);
 }
 
 /* if delete class "gap-list" from <ul> element in the WORK SECTION and add class "work-list" and add class "work-item" for <li> element we can use below code */
@@ -350,7 +373,7 @@ img {
 	text-align: center;
 
 	background-color: var(--background-color-team-caption);
-	
+
 	border-radius: 0px 0px 4px 4px;
 }
 
@@ -369,6 +392,20 @@ img {
 	margin-right: 30px;
 } */
 
+/* COSTUMER */
+
+.costumer {
+}
+
+.costumer-link {
+	width: 170px;
+	height: 92px;
+
+	background-color: #c4c4c4;
+
+	border: 1px solid #afb1b8;
+	border-radius: 4px;
+}
 
 /*-------------------------FOOTER-------------------------*/
 
@@ -441,7 +478,6 @@ img {
 	display: flex;
 	justify-content: center;
 	gap: 8px;
-	
 }
 
 .padding-list-btn {
@@ -460,7 +496,6 @@ img {
 	border-bottom: 1px solid var(--card-border-color);
 	border-right: 1px solid var(--card-border-color);
 	border-left: 1px solid var(--card-border-color);
-
 }
 
 .portfolio-title {
