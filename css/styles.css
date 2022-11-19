@@ -540,13 +540,17 @@ img {
 	padding-bottom: 40px;
 }
 
+.footer-socials-link {
+	padding-top: 12px;
+}
+
 .footer-title {
 	font-size: 14px;
 	line-height: 1.14;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 
-	padding-top: 12px;
+	/* padding-top: 12px; */
 
 	color: var(--color-text-white);
 }
